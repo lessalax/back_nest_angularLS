@@ -24,4 +24,4 @@ git push origin master
 ´´´
 - Para forzar
 git push -f origin master
-´´´
+´´´ 
