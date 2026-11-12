@@ -13,11 +13,18 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 import { Body, Controller, Post } from '@nestjs/common';
 import { RegisterAuthDto } from './dto/register-auth.dto.js';
 import { LoginAuthDto } from './dto/login-auth.dto.js';
+import { AuthService } from './auth.service.js';
 let AuthController = class AuthController {
+    authservice;
+    constructor(authservice) {
+        this.authservice = authservice;
+    }
     registerUser(userObj) {
+        console.log(userObj);
         return userObj;
     }
     login(credenciales) {
+        return this.authservice.login(credenciales);
     }
 };
 __decorate([
@@ -35,7 +42,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "login", null);
 AuthController = __decorate([
-    Controller('auth')
+    Controller('auth'),
+    __metadata("design:paramtypes", [AuthService])
 ], AuthController);
 export { AuthController };
 //# sourceMappingURL=auth.controller.js.map
