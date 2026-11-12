@@ -4,11 +4,12 @@ import { AuthService } from './auth.service.js';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt.strategy.js';
 
+ 
 @Module({
   imports: [
     JwtModule.register({
       secret: "MI CODIGO SECRETO",
-      signOptions: {expiresIn: '60s'}
+      signOptions: {expiresIn: '60m'}
     })
   ],
   controllers: [AuthController],

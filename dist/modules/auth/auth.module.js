@@ -16,7 +16,7 @@ AuthModule = __decorate([
         imports: [
             JwtModule.register({
                 secret: "MI CODIGO SECRETO",
-                signOptions: { expiresIn: '60s' }
+                signOptions: { expiresIn: '60m' }
             })
         ],
         controllers: [AuthController],
